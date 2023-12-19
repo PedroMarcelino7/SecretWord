@@ -7,18 +7,15 @@ body {
     font-family: Helvetica;
     margin: 0;
     padding: 0;
-    background: rgb(9, 35, 175);
-    background: linear-gradient(180deg,
-            rgba(9, 35, 175, 1) 0%,
-            rgba(0, 0, 0, 1) 100%);
+   background-color: #242424;
     color: #fff;
 }
 
 button {
-    background-color: #1646a0;
-    color: #fff;
+    background-color: #242424;
+    color: #61dafb;
     padding: 0 45px;
-    border: 2px solid #fff;
+    border: 2px solid #61dafb;
     border-radius: 25px;
     height: 50px;
     text-transform: uppercase;
@@ -29,5 +26,6 @@ button {
 }
 
 button:hover {
-    background: #0923af;
+    background: #61dafb;
+    color: #242424;
 }

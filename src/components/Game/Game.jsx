@@ -1,7 +1,5 @@
+import styles from "./Game.module.css";
 import { useState, useRef } from "react";
-
-// styles
-import "./Game.module.css";
 
 const Game = ({
     verifyLetter,
@@ -27,28 +25,25 @@ const Game = ({
     };
 
     return (
-        <div className="game">
-            <p className="points">
-                <span>Pontuação</span>: {score}
-            </p>
-            <h1>Advinhe a palavra:</h1>
-            <h3 className="tip">
-                Dica sobre a palavra: <span>{pickedCategory}</span>
+        <div className={styles.game}>
+            <h1>Advinhe a palavra</h1>
+            <h3 className={styles.tip}>
+                Dica: <span>{pickedCategory.toUpperCase()}</span>
             </h3>
-            <p>Você ainda tem {guesses} tentativa(s).</p>
-            <div className="wordContainer">
+            <p className={styles.guesses}>Você ainda tem {guesses} tentativa(s).</p>
+            <div className={styles.wordContainer}>
                 {letters.map((letter, i) =>
                     guessedLetters.includes(letter) ? (
-                        <span className="letter" key={i}>
+                        <span className={styles.letter} key={i}>
                             {letter}
                         </span>
                     ) : (
-                        <span key={i} className="blankSquare"></span>
+                        <span key={i} className={styles.blankSquare}></span>
                     )
                 )}
             </div>
-            <div className="letterContainer">
-                <p>Tente adivnhar uma letra da palavra:</p>
+            <div className={styles.letterContainer}>
+                <p>Tente adivinhar uma letra da palavra:</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -62,12 +57,15 @@ const Game = ({
                     <button>Jogar!</button>
                 </form>
             </div>
-            <div className="wrongLettersContainer">
+            <div className={styles.wrongLettersContainer}>
                 <p>Letras já utilizadas:</p>
                 {wrongLetters.map((letter, i) => (
-                    <span key={i}>{letter}, </span>
+                    <span key={i}>{letter.toUpperCase()}, </span>
                 ))}
             </div>
+            {/* <p className={styles.points}>
+                <span>Pontuação:</span> {score}
+            </p> */}
         </div>
     );
 };

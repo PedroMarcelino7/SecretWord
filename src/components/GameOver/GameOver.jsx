@@ -1,8 +1,8 @@
-import "./GameOver.module.css";
+import styles from "./GameOver.module.css";
 
 const GameOver = ({ retry, score }) => {
     return (
-        <div className="gameover">
+        <div className={styles.gameover}>
             <h1>Fim de jogo!</h1>
             <h2>
                 A sua pontuação foi: <span>{score}</span>!

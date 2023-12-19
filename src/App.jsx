@@ -1,14 +1,8 @@
 import "./App.css";
 import { useCallback, useEffect, useState } from "react";
-
-// components
 import Start from "./components/Start/Start.jsx";
 import Game from "./components/Game/Game.jsx";
 import GameOver from "./components/GameOver/GameOver.jsx";
-
-// styles
-
-// data
 import { wordsList } from "./data/words";
 
 const stages = [
@@ -20,11 +14,9 @@ const stages = [
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
   const [words] = useState(wordsList);
-
   const [pickedWord, setPickedWord] = useState("");
   const [pickedCategory, setPickedCategory] = useState("");
   const [letters, setLetters] = useState([]);
-
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(3);
@@ -33,14 +25,10 @@ function App() {
   console.log(words);
 
   const pickWordAndCategory = useCallback(() => {
-    // pick a random category
     const categories = Object.keys(words);
-    const category =
-      categories[Math.floor(Math.random() * Object.keys(categories).length)];
+    const category = categories[Math.floor(Math.random() * Object.keys(categories).length)];
 
-    // pick a random word
-    const word =
-      words[category][Math.floor(Math.random() * words[category].length)];
+    const word = words[category][Math.floor(Math.random() * words[category].length)];
 
     console.log(category, word);
 

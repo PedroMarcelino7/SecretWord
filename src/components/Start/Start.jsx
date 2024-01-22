@@ -4,8 +4,8 @@ const GameStart = ({ startGame }) => {
     return (
         <div className={styles.start}>
             <h1>Secret Word</h1>
-            <p>Clique no botão abaixo para começar a jogar</p>
-            <button onClick={startGame}>Começar</button>
+            <p>Click in the button above to play</p>
+            <button onClick={startGame}>Start</button>
         </div>
     );
 };

@@ -26,11 +26,11 @@ const Game = ({
 
     return (
         <div className={styles.game}>
-            <h1>Advinhe a palavra</h1>
+            <h1>Guess the Word</h1>
             <h3 className={styles.tip}>
-                Dica: <span>{pickedCategory.toUpperCase()}</span>
+                Tip: <span>{pickedCategory.toUpperCase()}</span>
             </h3>
-            <p className={styles.guesses}>Você ainda tem {guesses} tentativa(s).</p>
+            <p className={styles.guesses}>You still have {guesses} attempt(s).</p>
             <div className={styles.wordContainer}>
                 {letters.map((letter, i) =>
                     guessedLetters.includes(letter) ? (
@@ -43,7 +43,7 @@ const Game = ({
                 )}
             </div>
             <div className={styles.letterContainer}>
-                <p>Tente adivinhar uma letra da palavra:</p>
+                <p>Try to guess a letter:</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -54,11 +54,11 @@ const Game = ({
                         value={letter}
                         ref={letterInputRef}
                     />
-                    <button>Jogar!</button>
+                    <button>Play!</button>
                 </form>
             </div>
             <div className={styles.wrongLettersContainer}>
-                <p>Letras já utilizadas:</p>
+                <p>Wrong used letters:</p>
                 {wrongLetters.map((letter, i) => (
                     <span key={i}>{letter.toUpperCase()}, </span>
                 ))}
